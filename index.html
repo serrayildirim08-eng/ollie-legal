@@ -31,7 +31,7 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta">Ollie &middot; Last updated: 19 May 2026</p>
+  <p class="meta">Ollie &middot; Last updated: 14 October 2026</p>
 
   <p>Ollie is a personal organization app for capturing thoughts, organizing
   work and goals, and building routines. This policy explains what data the
@@ -50,10 +50,15 @@
   </ul>
 
   <h2>AI features</h2>
-  <p>Some features (such as sorting brain-dump notes or breaking goals into
-  steps) process the text you submit using a third-party AI provider
-  (Anthropic). Text is sent only to power the feature you used and is not
-  used to train third-party models.</p>
+  <p>To sort a brain-dump note into the right parts of the app, Ollie sends it
+  to its own AI service. This happens for every brain dump. Before any outside
+  AI model sees the text, Ollie removes names, contact details, ID-like numbers
+  and sensitive health, mental-health, medication and sexual content. The
+  scrubbed text is then processed by the AI providers listed below. Photos you
+  attach are described by Google Gemini before the scrub runs on the
+  description; voice notes are transcribed by Groq. If a note contains crisis
+  language, Ollie stops all AI processing for it. Each provider processes the
+  text under its own terms.</p>
 
   <h2>Optional anonymized data</h2>
   <p>With your explicit opt-in consent, Ollie may collect de-identified,
@@ -65,7 +70,7 @@
   <h2>How we use data</h2>
   <ul>
     <li>To provide and operate the app's features.</li>
-    <li>To sync your content across sessions and devices.</li>
+    <li>To sync your content across devices, if you turn sync on (off by default; encrypted on your device first).</li>
     <li>To send reminders you have enabled.</li>
     <li>To diagnose crashes and improve reliability.</li>
   </ul>
@@ -75,10 +80,15 @@
   <p>Ollie relies on the following providers to operate, each handling data
   only as needed to deliver the service:</p>
   <ul>
-    <li><strong>Supabase</strong> — account authentication and data storage.</li>
-    <li><strong>Cloudflare</strong> — app infrastructure and request routing.</li>
+    <li><strong>Clerk</strong> — sign-in and account identity.</li>
+    <li><strong>Supabase</strong> — account, consent and telemetry storage; optional encrypted sync.</li>
+    <li><strong>Cloudflare</strong> — app infrastructure, Ollie's AI service and its caches.</li>
+    <li><strong>Voyage AI</strong> — embeddings used to sort brain dumps.</li>
+    <li><strong>Groq</strong> — sorting brain dumps (main model) and voice transcription.</li>
+    <li><strong>Google Gemini</strong> — fallback sorting and photo description.</li>
+    <li><strong>OpenRouter</strong> — last-resort fallback sorting.</li>
+    <li><strong>Anthropic</strong> — labeling of anonymized research data (only if you opt in).</li>
     <li><strong>Sentry</strong> — crash and diagnostic reporting.</li>
-    <li><strong>Anthropic</strong> — AI processing for the features above.</li>
     <li><strong>Apple</strong> — delivery of push notifications.</li>
   </ul>
 
